@@ -12,7 +12,7 @@
 </p>
 
 This repository gathers is the code for homework in class.
-To read the detailed for what is this, please, refer to [my report](https://github.com/open-mmlab/mmdetection/readme_file/HW2%20Report_0856735.pdf).
+To read the detailed for what is this, please, refer to [my report](https://github.com/purpleFar/street-view-house-numbers-detection/blob/master/readme_file/HW2%20Report_0856735.pdf).
 
 ## Hardware
 The following specs were used to create the original solution.
