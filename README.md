@@ -1,152 +1,129 @@
-<div align="center">
-  <img src="resources/mmdet-logo.png" width="600"/>
-</div>
+# car-brand-classification
+<p align="left">
+    <a>
+        <img src=https://img.shields.io/badge/python-3.6.12-green>
+    </a>
+    <a>
+        <img src=https://img.shields.io/badge/pytorch-1.5.0-orange>
+    </a>
+    <a>
+        <img src=https://img.shields.io/badge/Imgaug-0.4.0-red>
+    </a>
+    <a href="https://github.com/psf/black">
+        <img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg">
+    </a>
+</p>
 
-**News**: We released the technical report on [ArXiv](https://arxiv.org/abs/1906.07155).
+This repository gathers the code for car brand classification from the [in-class Kaggle challenge](https://www.kaggle.com/c/cs-t0828-2020-hw1).  
+To read the detailed solution, please, refer to [my report](https://github.com/purpleFar/car-brand-classification/blob/master/readme_file/HW1%20Report_0856735.pdf).
 
-Documentation: https://mmdetection.readthedocs.io/
+## Hardware
+The following specs were used to create the original solution.
+- Windows 10
+- Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz 2.50GHz
+- NVIDIA GeForce GTX 1660 Ti
 
-## Introduction
-
-MMDetection is an open source object detection toolbox based on PyTorch. It is
-a part of the OpenMMLab project developed by [Multimedia Laboratory, CUHK](http://mmlab.ie.cuhk.edu.hk/).
-
-The master branch works with **PyTorch 1.3 to 1.6**.
-The old v1.x branch works with PyTorch 1.1 to 1.4, but v2.0 is strongly recommended for faster speed, higher performance, better design and more friendly usage.
-
-![demo image](resources/coco_test_12510.jpg)
-
-### Major features
-
-- **Modular Design**
-
-  We decompose the detection framework into different components and one can easily construct a customized object detection framework by combining different modules.
-
-- **Support of multiple frameworks out of box**
-
-  The toolbox directly supports popular and contemporary detection frameworks, *e.g.* Faster RCNN, Mask RCNN, RetinaNet, etc.
-
-- **High efficiency**
-
-  All basic bbox and mask operations run on GPUs. The training speed is faster than or comparable to other codebases, including [Detectron2](https://github.com/facebookresearch/detectron2), [maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) and [SimpleDet](https://github.com/TuSimple/simpledet).
-
-- **State of the art**
-
-  The toolbox stems from the codebase developed by the *MMDet* team, who won [COCO Detection Challenge](http://cocodataset.org/#detection-leaderboard) in 2018, and we keep pushing it forward.
-
-Apart from MMDetection, we also released a library [mmcv](https://github.com/open-mmlab/mmcv) for computer vision research, which is heavily depended on by this toolbox.
-
-## License
-
-This project is released under the [Apache 2.0 license](LICENSE).
-
-## Changelog
-
-v2.6.0 was released in 1/11/2020.
-Please refer to [changelog.md](docs/changelog.md) for details and release history.
-A comparison between v1.x and v2.0 codebases can be found in [compatibility.md](docs/compatibility.md).
-
-## Benchmark and model zoo
-
-Results and models are available in the [model zoo](docs/model_zoo.md).
-
-Supported backbones:
-- [x] ResNet
-- [x] ResNeXt
-- [x] VGG
-- [x] HRNet
-- [x] RegNet
-- [x] Res2Net
-- [x] ResNeSt
-
-Supported methods:
-- [x] [RPN](configs/rpn)
-- [x] [Fast R-CNN](configs/fast_rcnn)
-- [x] [Faster R-CNN](configs/faster_rcnn)
-- [x] [Mask R-CNN](configs/mask_rcnn)
-- [x] [Cascade R-CNN](configs/cascade_rcnn)
-- [x] [Cascade Mask R-CNN](configs/cascade_rcnn)
-- [x] [SSD](configs/ssd)
-- [x] [RetinaNet](configs/retinanet)
-- [x] [GHM](configs/ghm)
-- [x] [Mask Scoring R-CNN](configs/ms_rcnn)
-- [x] [Double-Head R-CNN](configs/double_heads)
-- [x] [Hybrid Task Cascade](configs/htc)
-- [x] [Libra R-CNN](configs/libra_rcnn)
-- [x] [Guided Anchoring](configs/guided_anchoring)
-- [x] [FCOS](configs/fcos)
-- [x] [RepPoints](configs/reppoints)
-- [x] [Foveabox](configs/foveabox)
-- [x] [FreeAnchor](configs/free_anchor)
-- [x] [NAS-FPN](configs/nas_fpn)
-- [x] [ATSS](configs/atss)
-- [x] [FSAF](configs/fsaf)
-- [x] [PAFPN](configs/pafpn)
-- [x] [Dynamic R-CNN](configs/dynamic_rcnn)
-- [x] [PointRend](configs/point_rend)
-- [x] [CARAFE](configs/carafe/README.md)
-- [x] [DCNv2](configs/dcn/README.md)
-- [x] [Group Normalization](configs/gn/README.md)
-- [x] [Weight Standardization](configs/gn+ws/README.md)
-- [x] [OHEM](configs/faster_rcnn/faster_rcnn_r50_fpn_ohem_1x_coco.py)
-- [x] [Soft-NMS](configs/faster_rcnn/faster_rcnn_r50_fpn_soft_nms_1x_coco.py)
-- [x] [Generalized Attention](configs/empirical_attention/README.md)
-- [x] [GCNet](configs/gcnet/README.md)
-- [x] [Mixed Precision (FP16) Training](configs/fp16/README.md)
-- [x] [InstaBoost](configs/instaboost/README.md)
-- [x] [GRoIE](configs/groie/README.md)
-- [x] [DetectoRS](configs/detectors/README.md)
-- [x] [Generalized Focal Loss](configs/gfl/README.md)
-- [x] [CornerNet](configs/cornernet/README.md)
-- [x] [Side-Aware Boundary Localization](configs/sabl/README.md)
-- [x] [YOLOv3](configs/yolo/README.md)
-- [x] [PAA](configs/paa/README.md)
-- [x] [YOLACT](configs/yolact/README.md)
-- [x] [CentripetalNet](configs/centripetalnet/README.md)
-- [x] [VFNet](configs/vfnet/README.md)
-
-Some other methods are also supported in [projects using MMDetection](./docs/projects.md).
+## Reproducing Submission
+To reproduct my submission without retrainig, do the following steps:
+1. [Installation](#installation)
+2. [Download Data](#download-data)
+3. [Preprocessing Images](#preprocessing-images)
+4. [Download Pretrained models](#pretrained-models)
+5. [Inference](#inference)
 
 ## Installation
-
-Please refer to [get_started.md](docs/get_started.md) for installation.
-
-## Getting Started
-
-Please see [get_started.md](docs/get_started.md) for the basic usage of MMDetection.
-We provide [colab tutorial](demo/MMDet_Tutorial.ipynb), and full guidance for quick run [with existing dataset](docs/1_exist_data_model.md) and [with new dataset](docs/2_new_data_model.md) for beginners.
-There are also tutorials for [finetuning models](docs/tutorials/finetune.md), [adding new dataset](docs/tutorials/new_dataset.md), [designing data pipeline](docs/tutorials/data_pipeline.md), [customizing models](docs/tutorials/customize_models.md), [customizing runtime settings](docs/tutorials/customize_runtime.md) and [useful tools](docs/useful_tools.md).
-
-Please refer to [FAQ](docs/faq.md) for frequently asked questions.
-
-## Contributing
-
-We appreciate all contributions to improve MMDetection. Please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the contributing guideline.
-
-## Acknowledgement
-
-MMDetection is an open source project that is contributed by researchers and engineers from various colleges and companies. We appreciate all the contributors who implement their methods or add new features, as well as users who give valuable feedbacks.
-We wish that the toolbox and benchmark could serve the growing research community by providing a flexible toolkit to reimplement existing methods and develop their own new detectors.
-
-## Citation
-
-If you use this toolbox or benchmark in your research, please cite this project.
-
-```
-@article{mmdetection,
-  title   = {{MMDetection}: Open MMLab Detection Toolbox and Benchmark},
-  author  = {Chen, Kai and Wang, Jiaqi and Pang, Jiangmiao and Cao, Yuhang and
-             Xiong, Yu and Li, Xiaoxiao and Sun, Shuyang and Feng, Wansen and
-             Liu, Ziwei and Xu, Jiarui and Zhang, Zheng and Cheng, Dazhi and
-             Zhu, Chenchen and Cheng, Tianheng and Zhao, Qijie and Li, Buyu and
-             Lu, Xin and Zhu, Rui and Wu, Yue and Dai, Jifeng and Wang, Jingdong
-             and Shi, Jianping and Ouyang, Wanli and Loy, Chen Change and Lin, Dahua},
-  journal= {arXiv preprint arXiv:1906.07155},
-  year={2019}
-}
+All requirements should be detailed in requirements.txt. Using Anaconda is strongly recommended.
+```bash=
+$ conda create -n  hw1 python=3.6
+$ conda activate hw1
+$ pip install -r requirements.txt
 ```
 
-## Contact
+## Download Data
+If the Kaggle API is installed, run following commands.
 
-This repo is currently maintained by Kai Chen ([@hellock](http://github.com/hellock)), Yuhang Cao ([@yhcao6](https://github.com/yhcao6)), Wenwei Zhang ([@ZwwWayne](https://github.com/ZwwWayne)),
-Jiarui Xu ([@xvjiarui](https://github.com/xvjiarui)). Other core developers include Jiangmiao Pang ([@OceanPang](https://github.com/OceanPang)) and Jiaqi Wang ([@myownskyW7](https://github.com/myownskyW7)).
+**Note!** there is no default unzip command in windows 10, you must unzip by GUI.
+```bash=
+$ kaggle competitions download -c cs-t0828-2020-hw1
+$ unzip cs-t0828-2020-hw1.zip
+```
+Unzip them then you can see following structure:
+```
+car-brand-classification/
+    ├── testing_data
+    │   ├── 000004.jpg
+    │   ├── 000005.jpg
+    │   │   .
+    │   │   .
+    │   │   .
+    │   └── 016181.jpg
+    ├── training_data
+    │   ├── 000001.jpg
+    │   ├── 000002.jpg
+    │   │   .
+    │   │   .
+    │   │   .
+    │   └── 016185.jpg
+    ├── training_labels.csv
+    │   .
+    │   .
+```
+
+## Preprocessing Images
+To train or inference, preprocessing is required. Run following command.
+```bash=
+$ python preprocessing.py
+```
+then there is some file in preprocess_file folder
+like this
+```
+car-brand-classification/preprocess_file/
+    ├── label.pkl
+    ├── name_to_num.pkl
+    └── num_to_name.pkl
+```
+
+## Train models
+To train models, run following command.
+```bash=
+$ python train.py --train_dir training_data --model_save_dir model
+```
+
+## Pretrained models
+You can download pretrained model that used for my submission from [link](https://drive.google.com/file/d/1fkrZNX9LAD8Ro5DOyG-Qap0MxV9LOLmH/view?usp=sharing). Or run following commands.
+
+**Note!** there is no default unzip command in windows 10, you must unzip by GUI.
+```bash=
+$ wget https://drive.google.com/file/d/1fkrZNX9LAD8Ro5DOyG-Qap0MxV9LOLmH/view?usp=sharing
+$ unzip model_wide_resnet.zip
+```
+Unzip them then you can see following structure:
+```
+car-brand-classification/model_wide_resnet/
+    ├── best_model0.pt
+    ├── best_model1.pt
+    ├── best_model2.pt
+    ├── best_model3.pt
+    ├── best_model4.pt
+    ├── best_model5.pt
+    ├── best_model6.pt
+    ├── best_model7.pt
+    ├── best_model8.pt
+    ├── best_model9.pt
+    ├── best_model10.pt
+    ├── best_model11.pt
+    └── best_model12.pt
+```
+
+## Inference
+If trained weights are prepared, you can create a file containing the car brand classification for each picture in test set.
+
+Using the model trained by yourself, enter the command:
+```bash=
+$ python test.py --test_dir testing_data --model_dir model --save_name submission.csv
+```
+Using the pre-trained model, enter the command:
+```bash=
+$ python test.py --test_dir testing_data --model_dir model_wide_resnet --save_name submission.csv
+```
+And you can see the submission.csv in result folder
